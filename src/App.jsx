@@ -1,20 +1,37 @@
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { UploadCloud, File, Trash2, Unlock, Download, Lock, Eye, EyeOff, FolderOpen, Sun } from 'lucide-react';
-
-// ============================================================================
-// 本地端真實 WASM 專案建置指南
-// 在 Canvas 線上預覽環境中，無法直接解析 'qpdf-wasm' 套件，
-// 因此下方這行 import 暫時被註解以確保預覽畫面正常顯示。
-// 
-// 當您在本地端開發時，請「取消註解」下方這行程式碼：
-// ============================================================================
-import loadQpdf from 'qpdf-wasm';
+import qpdfFactory from 'qpdf-wasm';
+import qpdfWasmUrl from 'qpdf-wasm/dist/qpdf.wasm?url';
+import qpdfJsUrl from 'qpdf-wasm/dist/qpdf.js?url';
 
 export default function App() {
   const [files, setFiles] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const fileInputRef = useRef(null);
+
+  // QPDF Instance
+  const [qpdf, setQpdf] = useState(null);
+
+  useEffect(() => {
+    const initQpdf = async () => {
+      try {
+        const instance = await qpdfFactory({
+          locateFile: (path) => {
+            if (path.endsWith('.wasm')) return qpdfWasmUrl;
+            if (path.endsWith('.js') || path.endsWith('.worker.js')) return qpdfJsUrl;
+            return path;
+          },
+          print: (text) => console.log('QPDF Output:', text),
+          printErr: (text) => console.error('QPDF Error:', text)
+        });
+        setQpdf(instance);
+      } catch (error) {
+        console.error("載入 qpdf-wasm 失敗:", error);
+      }
+    };
+    initQpdf();
+  }, []);
 
   // --- 拖曳上傳相關 ---
   const handleDragOver = useCallback((e) => { e.preventDefault(); setIsDragging(true); }, []);
