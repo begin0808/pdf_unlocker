@@ -91,7 +91,7 @@ export default function App() {
 
         // 1. 載入 WebAssembly 模組並解決 Worker/WASM undefined 找不到路徑的問題
         // 修正：使用 Vite 的 ?url 導入，確保在 GitHub Pages (production) 環境中取得正確的絕對路徑
-        const qpdf = await loadQpdf({
+        const qpdf = await qpdfFactory({
           locateFile: (path) => {
             if (path.endsWith('.worker.js') || path.endsWith('.js')) return '/pdf_unlocker/qpdf.js';
             if (path.endsWith('.wasm')) return '/pdf_unlocker/qpdf.wasm';
