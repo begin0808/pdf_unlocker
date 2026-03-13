@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: theme('colors.warmBg');
+    color: theme('colors.slate.800');
+    @apply overflow-x-hidden;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+}
+
+@layer utilities {
+  .sunny-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(253, 224, 71, 0.5);
+    /* Yellow border */
+  }
+
+  /* Grid background pattern */
+  .bg-grid {
+    background-size: 40px 40px;
+    background-image: theme('backgroundImage.soft-grid');
+  }
+
+  .text-glow-orange {
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+  }
+
+  /* Customized modern scrollbar for light theme */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(254, 240, 138, 0.2);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(245, 158, 11, 0.4);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(245, 158, 11, 0.6);
+  }
+}
