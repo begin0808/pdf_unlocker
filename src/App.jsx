@@ -134,7 +134,6 @@ export default function App() {
       } catch (err) {
         console.error("解鎖過程發生未知例外:", err);
         const errMsg = err.message || String(err);
-        alert("解鎖失敗，捕捉到以下例外：\n\n" + errMsg + "\n\n請截圖或複製此對話框內容。");
 
         setFiles(prev => prev.map(f => f.id === currentFile.id ? {
           ...f, status: 'error', message: errMsg.includes('ACCESS_DENIED') ? '❌ 密碼錯誤' : `❌ 錯誤: ${errMsg.substring(0, 15)}...`
