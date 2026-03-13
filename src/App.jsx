@@ -81,7 +81,7 @@ export default function App() {
         const arrayBuffer = await currentFile.file.arrayBuffer();
         const fileUint8 = new Uint8Array(arrayBuffer);
 
-        setFiles(prev => prev.map(f => f.id === currentFile.id ? { ...f, progress: 60, message: '移除密碼保護中...' } : f));
+        setFiles(prev => prev.map(f => f.id === currentFile.id ? { ...f, progress: 60, message: '移除密碼保全中...' } : f));
 
         let outBuffer;
 
@@ -127,7 +127,7 @@ export default function App() {
         const downloadUrl = URL.createObjectURL(blob);
 
         setFiles(prev => prev.map(f => f.id === currentFile.id ? {
-          ...f, status: 'success', progress: 100, message: '✅ 解鎖成功', downloadUrl
+          ...f, status: 'success', progress: 100, message: '✅ 解保全成功', downloadUrl
         } : f));
 
       } catch (err) {
@@ -276,7 +276,7 @@ export default function App() {
                       {file.status === 'success' && (
                         <div className="w-52 flex justify-end px-1">
                           <button onClick={() => handleDownload(file)} className="flex items-center justify-center w-full text-[16px] font-extrabold text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg shadow-sm transition-all hover:scale-105 active:scale-95 border border-green-600">
-                            <Download size={16} className="mr-1.5" /> 下載解鎖
+                            <Download size={16} className="mr-1.5" /> 下載檔案
                           </button>
                         </div>
                       )}
@@ -304,7 +304,7 @@ export default function App() {
                     {isProcessing ? (
                       <><div className="w-4 h-4 border-2 border-orange-200 border-t-white rounded-full animate-spin mr-2"></div>處理中...</>
                     ) : (
-                      <><Unlock size={16} className="mr-2" /> 一鍵解除保護</>
+                      <><Unlock size={16} className="mr-2" /> 一鍵解除保全</>
                     )}
                   </button>
                 </div>

@@ -13,8 +13,8 @@ export default {
         warmBg: '#fffbeb',
       },
       backgroundImage: {
-        'sunny-gradient': 'linear-gradient(135deg, #fef08a 0%, #fde047 100%)',
-        'soft-grid': 'linear-gradient(to right, #fef08a 1px, transparent 1px), linear-gradient(to bottom, #fef08a 1px, transparent 1px)',
+        'sunny-gradient': 'linear-gradient(135deg, #fde68a 0%, #fcd34d 100%)',
+        'soft-grid': 'linear-gradient(to right, #fbbf24 1px, transparent 1px), linear-gradient(to bottom, #fbbf24 1px, transparent 1px)',
       },
       boxShadow: {
         'soft-warm': '0 4px 20px rgba(245, 158, 11, 0.15), 0 0 40px rgba(254, 240, 138, 0.4)',
