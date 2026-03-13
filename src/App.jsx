@@ -176,7 +176,7 @@ export default function App() {
             </span>
           </div>
           <h1 className="text-xl md:text-2xl font-extrabold mb-2 tracking-tight text-slate-800 drop-shadow-sm">
-            Studio0808 _PDF文件輕鬆解碼
+            Studio0808 _PDF文件輕鬆解保全
           </h1>
           <p className="text-[16px] text-slate-600 max-w-lg mx-auto leading-relaxed font-medium">
             檔案百分之百留在您的瀏覽器內處理。<span className="text-orange-600 font-bold">絕不上傳至任何伺服器，</span><br />給您最高等級的隱私保障。
@@ -288,7 +288,7 @@ export default function App() {
 
               {/* 底部整體操作 */}
               <div className="bg-amber-100/80 p-4 sm:p-5 flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-amber-200">
-                <span className="text-[16px] text-slate-700 flex items-center gap-2 font-semibold tracking-wide"><Unlock size={16} className="text-orange-600" /> 無密碼會直接解密</span>
+                <span className="text-[16px] text-slate-700 flex items-center gap-2 font-semibold tracking-wide"><Unlock size={16} className="text-orange-600" /> 無密碼會直接解保全</span>
                 <div className="flex gap-3 w-full sm:w-auto">
                   {files.some(f => f.status === 'success') && (
                     <button onClick={handleDownloadAll} className="flex-1 sm:flex-none flex items-center justify-center px-5 py-2 sm:py-2.5 rounded-lg text-[16px] font-extrabold text-white border border-green-700 bg-green-500 hover:bg-green-600 transition-all tracking-wider shadow-sm">
