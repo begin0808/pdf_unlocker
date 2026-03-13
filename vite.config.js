@@ -45,6 +45,7 @@ const fixWasmAndWorkerPlugin = () => ({
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/pdf_unlocker/',
   plugins: [react(), fixWasmAndWorkerPlugin()],
   optimizeDeps: {
     // 排除 qpdf-wasm，避免 Vite 錯誤地把它當成一般 JS 模組打包
