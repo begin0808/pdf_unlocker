@@ -313,8 +313,19 @@ export default function App() {
           </div>
         )}
 
+        {/* 最高隱私驗證說明 (Q&A) */}
+        <div className="mt-8 mb-2 sunny-card shadow-sm rounded-xl p-5 sm:p-6 border border-amber-200/60 bg-white/70 animate-in fade-in duration-700">
+          <div className="flex items-center gap-2 mb-3">
+            <Lock size={18} className="text-orange-600" />
+            <h3 className="font-extrabold text-[16px] text-slate-800 tracking-wide">如何驗證最高隱私？</h3>
+          </div>
+          <p className="text-[15px] sm:text-[16px] text-slate-600 leading-relaxed font-medium">
+            本工具採用先進的 WebAssembly 邊緣運算技術。您可以<strong className="text-orange-600 font-bold mx-0.5">「在載入網頁後，直接關閉您的 Wi-Fi 或網路連線」</strong>再進行解鎖。您會發現即使在無網路的離線狀態下，解碼速度與結果皆完全不受影響。這正是您的文件從頭到尾都不曾離開過您電腦的最佳鐵證。
+          </p>
+        </div>
+
         {/* 頁尾版權宣告 */}
-        <div className="mt-8 text-center pb-4 animate-in fade-in duration-700">
+        <div className="mt-6 text-center pb-4 animate-in fade-in duration-700">
           <p className="text-[16px] text-slate-500 font-medium tracking-wide">
             © 2026 Studio0808 智造實驗室. All rights reserved.
           </p>
