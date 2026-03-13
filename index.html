@@ -7,7 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Studio0808 _PDF文件輕鬆解碼</title>
 
-  <!-- Tailwind CSS is now handled by PostCSS locally -->
+  <!-- GitHub Pages Service Worker 攔截器：強制加入 COOP/COEP 標頭以允許執行 WebAssembly 緒 -->
+  <script>
+    if ('serviceWorker' in navigator && !crossOriginIsolated) {
+      navigator.serviceWorker.register('/pdf_unlocker/coop-coep.js').then(
+        (registration) => {
+          console.log('COOP/COEP ServiceWorker registration successful');
+          // 重新載入頁面以套用 Service Worker 的標頭
+          window.location.reload();
+        },
+        (err) => {
+          console.error('COOP/COEP ServiceWorker registration failed: ', err);
+        }
+      );
+    }
+  </script>
 </head>
 
 <body>
