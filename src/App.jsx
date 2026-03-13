@@ -58,7 +58,8 @@ export default function App() {
       progress: 0,
       downloadUrl: null
     }));
-    setFiles(prev => [...prev, ...newFileObjects]);
+    // 變更：每次上傳新檔案時，直接覆蓋原本的清單，不保留舊檔案
+    setFiles(newFileObjects);
   };
 
   // --- UI 互動 ---
@@ -145,7 +146,7 @@ export default function App() {
 
   const handleDownload = (file) => {
     if (!file.downloadUrl) return;
-    const newFileName = `${file.name.replace(/\.pdf$/i, '')}_已解鎖.pdf`;
+    const newFileName = `${file.name.replace(/\.pdf$/i, '')}_已解保全.pdf`;
     const a = document.createElement('a');
     a.href = file.downloadUrl;
     a.download = newFileName;
