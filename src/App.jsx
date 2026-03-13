@@ -1,8 +1,6 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { UploadCloud, File, Trash2, Unlock, Download, Lock, Eye, EyeOff, FolderOpen, Sun } from 'lucide-react';
 import qpdfFactory from 'qpdf-wasm';
-import qpdfWasmUrl from 'qpdf-wasm/dist/qpdf.wasm?url';
-import qpdfJsUrl from 'qpdf-wasm/dist/qpdf.js?url';
 
 export default function App() {
   const [files, setFiles] = useState([]);
@@ -18,8 +16,8 @@ export default function App() {
       try {
         const instance = await qpdfFactory({
           locateFile: (path) => {
-            if (path.endsWith('.wasm')) return qpdfWasmUrl;
-            if (path.endsWith('.js') || path.endsWith('.worker.js')) return qpdfJsUrl;
+            if (path.endsWith('.wasm')) return '/pdf_unlocker/qpdf.wasm';
+            if (path.endsWith('.js') || path.endsWith('.worker.js')) return '/pdf_unlocker/qpdf.js';
             return path;
           },
           print: (text) => console.log('QPDF Output:', text),
@@ -95,8 +93,8 @@ export default function App() {
         // 修正：使用 Vite 的 ?url 導入，確保在 GitHub Pages (production) 環境中取得正確的絕對路徑
         const qpdf = await loadQpdf({
           locateFile: (path) => {
-            if (path.endsWith('.worker.js') || path.endsWith('.js')) return qpdfJsUrl;
-            if (path.endsWith('.wasm')) return qpdfWasmUrl;
+            if (path.endsWith('.worker.js') || path.endsWith('.js')) return '/pdf_unlocker/qpdf.js';
+            if (path.endsWith('.wasm')) return '/pdf_unlocker/qpdf.wasm';
             return path;
           },
           print: (text) => console.log('qpdf stdout:', text),
