@@ -169,12 +169,6 @@ export default function App() {
 
         {/* 清新標題區 */}
         <div className="text-center mb-6">
-          <div className="inline-flex items-center justify-center gap-2 mb-2 bg-amber-50/70 backdrop-blur-md px-3 py-1 rounded-full border border-yellow-300 shadow-sm">
-            <Sun className="text-orange-500 w-4 h-4 animate-[spin_10s_linear_infinite]" />
-            <span className="text-[16px] font-bold tracking-widest text-orange-600 uppercase">
-              本機安全解鎖器
-            </span>
-          </div>
           <h1 className="text-xl md:text-2xl font-extrabold mb-2 tracking-tight text-slate-800 drop-shadow-sm">
             Studio0808 _PDF文件輕鬆解保全
           </h1>
@@ -287,7 +281,7 @@ export default function App() {
               </ul>
 
               {/* 底部整體操作 */}
-              <div className="bg-amber-100/80 p-4 sm:p-5 flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-amber-200">
+              <div className="bg-amber-200/90 p-4 sm:p-5 flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-amber-300 shadow-inner">
                 <span className="text-[16px] text-slate-700 flex items-center gap-2 font-semibold tracking-wide"><Unlock size={16} className="text-orange-600" /> 無密碼會直接解保全</span>
                 <div className="flex gap-3 w-full sm:w-auto">
                   {files.some(f => f.status === 'success') && (
@@ -314,13 +308,13 @@ export default function App() {
         )}
 
         {/* 最高隱私驗證說明 (Q&A) */}
-        <div className="mt-8 mb-2 bg-gradient-to-br from-amber-100/95 to-orange-50/90 shadow-sm rounded-xl p-5 sm:p-6 border border-orange-200/50 animate-in fade-in duration-700">
+        <div className="mt-8 mb-2 bg-slate-800 shadow-md rounded-xl p-5 sm:p-6 border border-slate-700 animate-in fade-in duration-700">
           <div className="flex items-center gap-2 mb-3">
-            <Lock size={18} className="text-orange-600" />
-            <h3 className="font-extrabold text-[16px] text-slate-800 tracking-wide">如何驗證最高隱私？</h3>
+            <Lock size={18} className="text-amber-400" />
+            <h3 className="font-extrabold text-[16px] text-white tracking-wide">如何驗證最高隱私？</h3>
           </div>
-          <p className="text-[15px] sm:text-[16px] text-slate-600 leading-relaxed font-medium">
-            本工具採用先進的 WebAssembly 邊緣運算技術。您可以<strong className="text-orange-600 font-bold mx-0.5">「在載入網頁後，直接關閉您的 Wi-Fi 或網路連線」</strong>再進行解鎖。您會發現即使在無網路的離線狀態下，解碼速度與結果皆完全不受影響。這正是您的文件從頭到尾都不曾離開過您電腦的最佳鐵證。
+          <p className="text-[15px] sm:text-[16px] text-slate-300 leading-relaxed font-medium">
+            本工具採用先進的 WebAssembly 邊緣運算技術。您可以<strong className="text-amber-400 font-bold mx-0.5">「在載入網頁後，直接關閉您的 Wi-Fi 或網路連線」</strong>再進行解鎖。您會發現即使在無網路的離線狀態下，解碼速度與結果皆完全不受影響。這正是您的文件從頭到尾都不曾離開過您電腦的最佳鐵證。
           </p>
         </div>
 
