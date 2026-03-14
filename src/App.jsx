@@ -314,7 +314,7 @@ export default function App() {
         )}
 
         {/* 最高隱私驗證說明 (Q&A) */}
-        <div className="mt-8 mb-2 sunny-card shadow-sm rounded-xl p-5 sm:p-6 border border-amber-200/60 bg-white/70 animate-in fade-in duration-700">
+        <div className="mt-8 mb-2 bg-gradient-to-br from-amber-100/95 to-orange-50/90 shadow-sm rounded-xl p-5 sm:p-6 border border-orange-200/50 animate-in fade-in duration-700">
           <div className="flex items-center gap-2 mb-3">
             <Lock size={18} className="text-orange-600" />
             <h3 className="font-extrabold text-[16px] text-slate-800 tracking-wide">如何驗證最高隱私？</h3>
