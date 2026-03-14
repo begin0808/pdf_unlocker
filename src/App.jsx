@@ -308,13 +308,13 @@ export default function App() {
         )}
 
         {/* 最高隱私驗證說明 (Q&A) */}
-        <div className="mt-8 mb-2 bg-slate-800 shadow-md rounded-xl p-5 sm:p-6 border border-slate-700 animate-in fade-in duration-700">
+        <div className="mt-8 mb-2 bg-orange-50/80 shadow-sm rounded-xl p-5 sm:p-6 border border-orange-200 animate-in fade-in duration-700">
           <div className="flex items-center gap-2 mb-3">
-            <Lock size={18} className="text-amber-400" />
-            <h3 className="font-extrabold text-[16px] text-white tracking-wide">如何驗證最高隱私？</h3>
+            <Lock size={18} className="text-orange-600" />
+            <h3 className="font-extrabold text-[16px] text-slate-800 tracking-wide">如何驗證最高隱私？</h3>
           </div>
-          <p className="text-[15px] sm:text-[16px] text-slate-300 leading-relaxed font-medium">
-            本工具採用先進的 WebAssembly 邊緣運算技術。您可以<strong className="text-amber-400 font-bold mx-0.5">「在載入網頁後，直接關閉您的 Wi-Fi 或網路連線」</strong>再進行解鎖。您會發現即使在無網路的離線狀態下，解碼速度與結果皆完全不受影響。這正是您的文件從頭到尾都不曾離開過您電腦的最佳鐵證。
+          <p className="text-[15px] sm:text-[16px] text-slate-600 leading-relaxed font-medium">
+            本工具採用先進的 WebAssembly 邊緣運算技術。您可以<strong className="text-orange-600 font-bold mx-0.5">「在載入網頁後，直接關閉您的 Wi-Fi 或網路連線」</strong>再進行解保全。您會發現即使在無網路的離線狀態下，處理速度與結果皆完全不受影響。這正是您的文件從頭到尾都不曾離開過您電腦的最佳鐵證。
           </p>
         </div>
 
